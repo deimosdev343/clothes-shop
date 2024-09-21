@@ -4,7 +4,7 @@ import Menu from './Menu';
 import LogoIcon from '../assets/Logo.png';
 import Image from 'next/image';
 import Searchbar from './Searchbar';
-import NavIcons from './NavIcons';
+import NavIcons from './NavIcons.tsx';
 const Navbar = () => {
 
   return (
@@ -21,11 +21,12 @@ const Navbar = () => {
             <div className='text-2xl font-extrabold'>Cloths Shop</div>
             <Image
               src={LogoIcon}
+              alt=''
               className='w-[15%] h-[15%]'
             />        
           </Link>
         </div>
-        <div className='w-2/3 flex items-center justify-between gap-8'>
+        <div className='w-2/3 flex items-center justify-between gap-8 '>
           <Searchbar/>
           <NavIcons/>
         </div>
