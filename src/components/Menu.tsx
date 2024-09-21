@@ -8,8 +8,9 @@ import Link from 'next/link';
 const Menu = () => {
   const [open, setOpen] = useState(false);            
   return (
-    <div className='m-2       '>
+    <div className='m-2'>
       <Image
+        alt=''
         src={MenuIcon}
         className='cursor-pointer'
         width={28}
