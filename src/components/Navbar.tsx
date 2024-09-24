@@ -16,7 +16,7 @@ const Navbar = () => {
         <Menu/>
       </div>
       <div className='hidden md:flex items-center justify-between gap-8 h-full'>
-        <div className='w-1/3'>
+        <div className='w-1/3 xl:1/2 flex items-center'>
           <Link href='/' className='relative flex items-center'>
             <div className='text-2xl font-extrabold'>Cloths Shop</div>
             <Image
@@ -25,8 +25,20 @@ const Navbar = () => {
               className='w-[15%] h-[15%]'
             />        
           </Link>
+          <div className='hidden xl:flex gap-4'>
+            {/*
+              I'll find a solution for this mess later
+            */}
+            {/* <Link href="/">Homepage</Link>
+            <Link href="/">Shop</Link>
+            <Link href="/">Deals</Link>
+            <Link href="/">About</Link>
+            <Link href="/">Contact</Link> */}
+            <Link href="/">Logout</Link>
+            <Link href="/">Cart(1)</Link>
+          </div>
         </div>
-        <div className='w-2/3 flex items-center justify-between gap-8 '>
+        <div className='w-2/3 xl:1/2 flex items-center justify-between gap-8 '>
           <Searchbar/>
           <NavIcons/>
         </div>
