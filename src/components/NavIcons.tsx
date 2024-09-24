@@ -6,6 +6,7 @@ import ProfileIcon from '../assets/profile-user.png';
 import CartIcon from '../assets/shopping-cart.png';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import CartModal from './CartModal';
 
 
 
@@ -50,8 +51,17 @@ const NavIcons = () => {
         width={22}
         height={22}
         className='cursor-pointer'
+        onClick={() => setIsCartOpen(prev => !prev)}
       />
-
+      <div 
+        className='absolute -top-4 -right-4 w-6 h-6 bg-[#f35c7a]
+          rounded-full text-white text-sm flex items-center justify-center  '
+      >
+        2
+      </div>
+      {isCartOpen && (
+        <CartModal />
+      )}
     </div>
   
 }
