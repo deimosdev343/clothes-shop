@@ -31,11 +31,20 @@ const slides = [
 
 
 import { url } from 'inspector';
-import React from 'react'
+import React, { useState } from 'react'
 
 const Slider = () => {
+  const [current, setCurrent] = useState(0);
   return (
-    <div>Slider</div>
+    <div className='h-[calc(100vh-80px) overflow-hidden]'>
+      <div className='w-max h-full flex transition-all ease-in-out duration-1000'>
+        {slides.map(slide => <div className='' key={slide.id}>
+          <div className=''></div>
+          <div className=''></div>
+
+        </div>)}
+      </div>
+    </div>
   )
 }
 
