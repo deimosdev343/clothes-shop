@@ -27,7 +27,7 @@ const Navbar = () => {
           </Link>
           <div className='hidden xl:flex gap-4'>
             {/*
-              I'll find a solution for this mess later
+              I'll find a solution for this mess later  
             */}
             {/* <Link href="/">Homepage</Link>
             <Link href="/">Shop</Link>

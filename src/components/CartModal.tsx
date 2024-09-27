@@ -19,7 +19,7 @@ const CartModal = () => {
         </div>
       ) : (
         <>
-        <h2 className='text-xl'>Cart Is Empty</h2>
+        <h2 className='text-xl'>Cart Is Empty </h2>
         <div className='flex flex-col gap-8'>
           <div className='flex gap-4'>
             <Image
