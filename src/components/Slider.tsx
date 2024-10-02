@@ -8,7 +8,7 @@ const slides = [
     id:1,
     title:"Summer sale Collection",
     description: "Sale! Up to 50% off!",
-    img:"https://i.imgur.com/1uMluMJ.png",
+      img:"https://i.imgur.com/1uMluMJ.png",
     url:"/",
     bg:"bg-gradiant-to-r from-yellow-50 to-pink-50"
   },
@@ -29,8 +29,6 @@ const slides = [
   }
 ];
 
-
-import { url } from 'inspector';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -50,7 +48,7 @@ const Slider = () => {
     return () => {
       clearInterval(inter);
     }
-  }, [])
+  }, []);
 
   return (
     <div className='h-[calc(100vh-80px)] overflow-hidden'>
@@ -68,7 +66,7 @@ const Slider = () => {
               </button>
             </Link>
           </div>
-          <div className='h-1/2 xl: w-1/2 relative xl:h-full'>
+             <div className='h-1/2 xl: w-1/2 relative xl:h-full'>
             <Image
               src="https://i.imgur.com/1uMluMJ.png"
               alt=''
@@ -83,6 +81,7 @@ const Slider = () => {
         {
           slides.map((slide, index) => (
             <div 
+              key={slide.id}
               className={`w-3 h-3 rounded-full ring-1 ring-gray-600
                 cursor-pointer flex items-center justify-center ${current === index ? "scale-150" : ""}`}
               onClick={() => {
@@ -101,4 +100,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default Slider;
