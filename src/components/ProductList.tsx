@@ -4,23 +4,73 @@ import Link from "next/link"
 const ProductList = () => {
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-      <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:[22%]">
+      <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
         <div className="w-full relative h-80">
           <Image
             src={'https://i.imgur.com/GRz3dtd.png'}
             alt=""
             fill
-            sizes="25%"
-            className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-all easy duration-500"
+            sizes="100%"
+            className="absolute object-cover rounded-md z-10"
           />
+        </div>
+        <div className="flex justify-between">
+          <span className="font-medium text-md">Product Name</span>
+          <span className="font-semibold text-md">$49</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white w-max">Add To Cart</button>
+      </Link>
+      <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
+        <div className="w-full relative h-80">
           <Image
             src={'https://i.imgur.com/GRz3dtd.png'}
             alt=""
             fill
-            sizes="25%"
-            className="absolute object-cover rounded-md "
+            sizes="100%"
+            className="absolute object-cover rounded-md z-10"
           />
         </div>
+        <div className="flex justify-between">
+          <span className="font-medium text-md">Product Name</span>
+          <span className="font-semibold text-md">$49</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white w-max">Add To Cart</button>
+      </Link>
+      <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
+        <div className="w-full relative h-80">
+          <Image
+            src={'https://i.imgur.com/GRz3dtd.png'}
+            alt=""
+            fill
+            sizes="100%"
+            className="absolute object-cover rounded-md z-10"
+          />
+        </div>
+        <div className="flex justify-between">
+          <span className="font-medium text-md">Product Name</span>
+          <span className="font-semibold text-md">$49</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white w-max">Add To Cart</button>
+      </Link>
+      <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
+        <div className="w-full relative h-80">
+          <Image
+            src={'https://i.imgur.com/GRz3dtd.png'}
+            alt=""
+            fill
+            sizes="100%"
+            className="absolute object-cover rounded-md z-10"
+          />
+        </div>
+        <div className="flex justify-between">
+          <span className="font-medium text-md">Product Name</span>
+          <span className="font-semibold text-md">$49</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white w-max">Add To Cart</button>
       </Link>
     </div>
   )
