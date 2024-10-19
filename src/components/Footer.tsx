@@ -25,7 +25,36 @@ const Footer = () => {
           </div>
         </div>
         <div className='hidden lg:flex justify-between w-1/2'>
-
+          <div className='flex flex-col justify-between'>
+            <h1 className='font-medium text-lg'>COMPANY</h1>
+            <div className='flex flex-col gap-6'>
+              <Link href="" >About Us</Link>
+              <Link href="">Careers</Link>
+              <Link href="">affiliates</Link>
+              <Link href="">Contact us</Link>
+              <Link href="">Other links</Link>
+            </div>
+          </div>
+          <div className='flex flex-col justify-between'>
+            <h1 className='font-medium text-lg'>Help</h1>
+            <div className='flex flex-col gap-6'>
+              <Link href="" >Talk To Us</Link>
+              <Link href="">Accessability</Link>
+              <Link href="">Locations</Link>
+              <Link href="">Tech Support</Link>
+              <Link href="">Gift Card Help</Link>
+            </div>
+          </div>
+          <div className='flex flex-col justify-between'>
+            <h1 className='font-medium text-lg'>SHOP</h1>
+            <div className='flex flex-col gap-6'>
+              <Link href="" >New Arrivals</Link>
+              <Link href="">Accessories</Link>
+              <Link href="">Men</Link>
+              <Link href="">Women</Link>
+              <Link href="">All Products</Link>
+            </div>
+          </div>
         </div>
         <div className='w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'>
           <h1 className='font-medium text-lg'>SUBSCRIBE</h1>
