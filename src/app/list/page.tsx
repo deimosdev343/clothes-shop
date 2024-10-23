@@ -1,3 +1,5 @@
+import Filter from "@/components/Filter";
+import ProductList from "@/components/ProductList";
 import Image from "next/image";
 import React from "react";
 
@@ -14,6 +16,9 @@ const ListPage = () => {
             <Image src="/woman.png" alt="" fill className="object-contain"/>
           </div>
         </div>
+        <Filter/>
+        <h1>REPLACE THIS WITH BACKEND INPUT</h1>
+      <ProductList/>
       </div>
     );
 }
