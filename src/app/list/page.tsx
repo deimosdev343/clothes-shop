@@ -17,8 +17,8 @@ const ListPage = () => {
           </div>
         </div>
         <Filter/>
-        <h1>REPLACE THIS WITH BACKEND INPUT</h1>
-      <ProductList/>
+        <h1>PROMOTION INPUT</h1>
+        <ProductList/>
       </div>
     );
 }
