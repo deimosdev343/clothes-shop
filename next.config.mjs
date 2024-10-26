@@ -5,6 +5,10 @@ const nextConfig = {
       {
         protocol:"https",
         hostname:"i.imgur.com",
+      },
+      {
+        protocol:"http",
+        hostname:"i.imgur.com",
       }
     ]
   }

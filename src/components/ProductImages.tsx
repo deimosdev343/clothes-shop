@@ -30,7 +30,7 @@ const ProductImages = () => {
     <div className="">
       <div className="h-[500px] relative">
         <Image
-          src="https://i.imgur.com/GRz3dtd.png"
+          src={images[index].url}
           alt=""
           fill
           sizes="100%"
@@ -38,13 +38,18 @@ const ProductImages = () => {
         />
       </div>
       <div className="">
-        <Image
-          src="https://i.imgur.com/GRz3dtd.png"
-          alt=""
-          fill
-          sizes="60%"
-          className="object-cover rounded-md"
-        />
+        {images.map((prodImg, ind) => <div className="w-1/4 h-32 relative gap-4 mt-8" key={prodImg.id}>
+          <Image
+            src={prodImg.url}
+            alt=""
+            fill
+            sizes="60%"
+            onClick={() => {
+              setIndex(ind)
+            }}
+            className="object-cover rounded-md"
+          />
+        </div>)}
       </div>
     </div>
   )
