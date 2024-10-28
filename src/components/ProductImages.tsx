@@ -37,7 +37,7 @@ const ProductImages = () => {
           className="object-cover rounded-md"
         />
       </div>
-      <div className="">
+      <div className="flex flex-row  gap-4">
         {images.map((prodImg, ind) => <div className="w-1/4 h-32 relative gap-4 mt-8" key={prodImg.id}>
           <Image
             src={prodImg.url}
