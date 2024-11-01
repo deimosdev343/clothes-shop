@@ -8,7 +8,7 @@ const nextConfig = {
       },
       {
         protocol:"http",
-        hostname:"i.imgur.com",
+        hostname:"i.imgur.com", 
       }
     ]
   }
