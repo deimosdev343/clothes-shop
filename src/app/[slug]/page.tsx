@@ -35,7 +35,16 @@ const SinglePage = () => {
           <div className="h-[2px] bg-gray-100"></div>
             <CustomizeProducts/>
           <div className="h-[2px] bg-gray-100"></div>
-          
+          {/*I'm not sure sure I actually need this shit below  */}
+          {/* <div className="flex flex-col items-start gap-2">
+            <h4 className="text-xl font-bold">Title</h4>
+            <p className="text-sm">
+              What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated 
+              top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda,
+              and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the 
+              entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out
+            </p>
+          </div>           */}
         </div>
       </div>
     );
