@@ -1,3 +1,4 @@
+import { CustomizeProducts } from "@/components/CustomizeProducts";
 import ProductImages from "@/components/ProductImages";
 import React from "react";
 
@@ -27,6 +28,14 @@ const SinglePage = () => {
              you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. 
              You're fucking dead, kiddo.
           </p>
+          <div className="flex items-center gap-4">
+            <h3 className="text-xl text-gray-500 line-through">$59</h3>
+            <h2 className="font-medium text-2xl">$49</h2>
+          </div>
+          <div className="h-[2px] bg-gray-100"></div>
+            <CustomizeProducts/>
+          <div className="h-[2px] bg-gray-100"></div>
+          
         </div>
       </div>
     );
