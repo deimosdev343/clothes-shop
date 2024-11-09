@@ -18,7 +18,17 @@ export const CustomizeProducts = () => {
         </li>
       </ul>
       <h4 className="font-medium">Choose a size</h4>
-      <ul className="flex items-center gap-3"></ul>
+      <ul className="flex items-center gap-3">
+        <li className="ring-1 ring-redPrim text-redPrim rounded-md py-1 px-4 text-sm cursor-pointer">
+          Small
+        </li>
+        <li className="ring-1 ring-redPrim text-white bg-redPrim rounded-md py-1 px-4 text-sm cursor-pointer">
+          Meduim
+        </li>
+        <li className="ring-1 ring-redPrim text-redPrim rounded-md py-1 px-4 text-sm cursor-pointer">
+          Large
+        </li>
+      </ul>
     </div>
   )
 }
