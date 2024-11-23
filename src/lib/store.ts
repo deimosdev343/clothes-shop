@@ -21,13 +21,13 @@ const cartSlice = createSlice({
 export const makeStore = () => {
   return configureStore({
     reducer:{
-
+      cartReducer: cartSlice.reducer
     }
   })
 }
 
 
-
+export const {setProducts} = cartSlice.actions;
 
 export type AppStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<AppStore['getState']>
