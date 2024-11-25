@@ -7,7 +7,17 @@ export interface cartState {
 } 
 
 const initialCartState : cartState = {
- products: [] 
+ products: [
+  {
+    id:"123",
+    title:"test",
+    "Stock": 2,
+    "price": 5,
+    image:"123",
+    "additionalImages":[],
+    sizes:[]
+  }
+ ] 
 }
 const cartSlice = createSlice({
   name: 'Cart',
@@ -21,7 +31,7 @@ const cartSlice = createSlice({
 export const makeStore = () => {
   return configureStore({
     reducer:{
-      cartReducer: cartSlice.reducer
+      cart: cartSlice.reducer
     }
   })
 }

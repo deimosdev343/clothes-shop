@@ -1,7 +1,12 @@
+"use client"
+
+import { useAppSelector } from "@/lib/store"
 import Image from "next/image"
 import Link from "next/link"
 
 const ProductList = () => {
+  const products = useAppSelector(state => state.cart);
+  console.log(products);
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
       <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
