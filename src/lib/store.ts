@@ -11,11 +11,9 @@ const initialCartState : cartState = {
   {
     id:"123",
     title:"test",
-    "Stock": 2,
     "price": 5,
     image:"123",
-    "additionalImages":[],
-    sizes:[]
+    amount: 4
   }
  ] 
 }
