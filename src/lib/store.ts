@@ -3,26 +3,34 @@ import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
 
 export interface cartState {
-  products: Array<Product>
-} 
+[Key: string] : {
+  title: string,
+  image: string,
+  amount: number,
+}
+}
 
 const initialCartState : cartState = {
- products: [
-  {
-    id:"123",
-    title:"test",
-    "price": 5,
-    image:"123",
-    amount: 4
-  }
- ] 
+
 }
 const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
   reducers: {
-    setProducts: (state, action: PayloadAction<Array<Product>>) => {
-      state.products = action.payload;
+    addAProduct: (state, action: PayloadAction<Product>) => {
+      if(state[action.payload.id]) {
+        state[action.payload.id].amount += 1;
+      }
+      if(!state[action.payload.id]) {
+        state[action.payload.id] = {
+          title: action.payload.title,
+          image: action.payload.image,
+          amount: 1
+        }
+      }
+    },
+    clearProucts: (state) => {
+      state = {};
     }
   },
 })
@@ -35,7 +43,7 @@ export const makeStore = () => {
 }
 
 
-export const {setProducts} = cartSlice.actions;
+export const {clearProucts} = cartSlice.actions;
 
 export type AppStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<AppStore['getState']>
