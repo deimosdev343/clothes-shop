@@ -3,11 +3,11 @@ import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
 
 export interface cartState {
-[Key: string] : {
-  title: string,
-  image: string,
-  amount: number,
-}
+  [Key: string] : {
+    title: string,
+    image: string,
+    amount: number,
+  }
 }
 
 const initialCartState : cartState = {
@@ -27,6 +27,14 @@ const cartSlice = createSlice({
           image: action.payload.image,
           amount: 1
         }
+      }
+    },
+    removeProduct: (state, action: PayloadAction<string>) => {
+      if(state[action.payload].amount > 1) {
+        state[action.payload].amount -=1;
+      }
+      if(state[action.payload].amount == 1) {
+        delete state[action.payload];
       }
     },
     clearProucts: (state) => {
