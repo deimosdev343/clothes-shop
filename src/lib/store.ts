@@ -4,14 +4,22 @@ import { useDispatch, useSelector, useStore } from "react-redux";
 
 export interface cartState {
   [Key: string] : {
+    id: string,
     title: string,
     image: string,
     amount: number,
   }
 }
 
-const initialCartState : cartState = {
 
+const initialCartState : cartState = {
+  "123":{
+    id:"123",
+    title:"test",
+    image:"[img]",
+    amount: 10,
+    
+  }
 }
 const cartSlice = createSlice({
   name: 'Cart',
@@ -23,11 +31,13 @@ const cartSlice = createSlice({
       }
       if(!state[action.payload.id]) {
         state[action.payload.id] = {
+          id: action.payload.id,
           title: action.payload.title,
           image: action.payload.image,
           amount: 1
         }
       }
+      return state;
     },
     removeProduct: (state, action: PayloadAction<string>) => {
       if(state[action.payload].amount > 1) {
@@ -36,9 +46,12 @@ const cartSlice = createSlice({
       if(state[action.payload].amount == 1) {
         delete state[action.payload];
       }
+      return state;
     },
     clearProucts: (state) => {
+      
       state = {};
+      return state;
     }
   },
 })

@@ -1,12 +1,25 @@
+'use client'
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Menu from './Menu';
 import LogoIcon from '../assets/Logo.png';
 import Image from 'next/image';
 import Searchbar from './Searchbar';
-import NavIcons from './NavIcons.tsx';
+import NavIcons from './NavIcons';
+import { useAppDispatch, useAppSelector } from '@/lib/store';
 const Navbar = () => {
+  const cart = useAppSelector(state => state.cart);
 
+  const getCartAmount = ()  => {
+    let amount = 0;
+    const keys = Object.keys(cart);
+    keys.forEach((key) => {
+      amount += cart[key].amount;
+    })
+    return amount;
+  }
+  const currAmount = getCartAmount();
   return (
     <div className='h-20 px-4 lg:px-16 xl:32 2xl:px-64 relative '>
       <div className='flex items-center justify-between md:hidden'>
@@ -35,7 +48,9 @@ const Navbar = () => {
             <Link href="/">About</Link>
             <Link href="/">Contact</Link> */}
             <Link href="/">Logout</Link>
-            <Link href="/">Cart(1)</Link>
+            {<Link href="/">
+              <p>Cart({currAmount})</p>
+            </Link>}
           </div>
         </div>
         <div className='w-2/3 xl:1/2 flex items-center justify-between gap-8 '>

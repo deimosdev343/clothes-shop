@@ -7,13 +7,23 @@ import CartIcon from '../assets/shopping-cart.png';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import CartModal from './CartModal';
+import { clearProucts, useAppDispatch, useAppSelector } from '@/lib/store';
 
 
 
 const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  
+  const cart = useAppSelector(state => state.cart);
+  const getCartAmount =  () => {
+    let amount = 0;
+    const keys = Object.keys(cart);
+    keys.forEach((key) => {
+      amount += cart[key].amount;
+    })
+    return amount;
+  } 
+
   const router = useRouter();
 
   // TEMP bullshit 
@@ -51,13 +61,16 @@ const NavIcons = () => {
         width={22}
         height={22}
         className='cursor-pointer'
-        onClick={() => setIsCartOpen(prev => !prev)}
+        onClick={() =>{ 
+          setIsCartOpen(prev => !prev);
+        }}
       />
       <div 
         className='absolute -top-4 -right-4 w-6 h-6 bg-[#f35c7a]
-          rounded-full text-white text-sm flex items-center justify-center  '
+          rounded-full text-white text-sm flex items-center justify-center '
+       
       >
-        2     
+        {getCartAmount()}
       </div>
       {isCartOpen && (
         <CartModal />
