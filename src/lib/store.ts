@@ -8,6 +8,7 @@ export interface cartState {
     title: string,
     image: string,
     amount: number,
+    price: number
   }
 }
 
@@ -16,11 +17,13 @@ const initialCartState : cartState = {
   "123":{
     id:"123",
     title:"test",
-    image:"[img]",
+    image:"https://i.imgur.com/GRz3dtd.png",
     amount: 10,
-    
+    price: 50.9
+
   }
 }
+
 const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
@@ -34,7 +37,8 @@ const cartSlice = createSlice({
           id: action.payload.id,
           title: action.payload.title,
           image: action.payload.image,
-          amount: 1
+          amount: 1,
+          price: action.payload.price
         }
       }
       return state;

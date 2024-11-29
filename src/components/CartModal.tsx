@@ -1,12 +1,15 @@
 "use client";
 
+import { useAppSelector } from '@/lib/store';
 import Image from 'next/image';
 import React  from 'react'
 
 const CartModal = () => {
 
+  const cart = useAppSelector(state => state.cart);
+
   //obviously there's going to be actual functionality
-  const cartItems = true;
+  const cartItems = Object.keys(cart).length > 0;
 
   return (
     <div
@@ -14,12 +17,10 @@ const CartModal = () => {
       bg-white top-12 right-0 flex flex-col gap-6 z-20  '
     >
       {!cartItems ? (
-        <div>
-          Cart is Empty
-        </div>
+        <h2 className='text-xl'>Cart Is Empty </h2>
       ) : (
         <>
-        <h2 className='text-xl'>Cart Is Empty </h2>
+
         <div className='flex flex-col gap-8'>
           <div className='flex gap-4'>
             <Image
