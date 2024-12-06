@@ -3,6 +3,7 @@
 import { useAppSelector } from '@/lib/store';
 import Image from 'next/image';
 import React  from 'react'
+import CartProduct from './Product/CartProduct';
 
 const CartModal = () => {
 
@@ -28,33 +29,8 @@ const CartModal = () => {
         <h2 className='text-xl'>Cart Is Empty </h2>
       ) : (
         <>
-
         <div className='flex flex-col gap-8'>
-          
-          <div className='flex gap-4'>
-            <Image
-              src="https://i.imgur.com/GRz3dtd.png"
-              alt=''
-              width={72}
-              height={92}
-              className='object-cover rounded-md'
-            />
-            <div className='flex flex-col justify-between w-full'>
-              <div className=''>
-                <div className='flex items-center justify-between gap-8'>
-                  <h3 className='font-semibold'>Product Name</h3>
-                  <div className='p-1 bg-gray-50 rounded-sm'>$49</div>
-                </div>
-                <div className='text-sm text-gray-500'>
-                  available 
-                </div>
-              </div>
-              <div className='flex justify-between  '>
-                <span className='text-gray-500'>Qty .2</span>
-                <span className='text-blue-500  '>Remove</span>
-              </div>
-            </div>
-          </div>
+         {Object.keys(cart).map(key => <CartProduct product={cart[key]} key={key}/>)}
         </div>
         <div className=''>
           <div className='flex items-center justify-between font-semibold'>
