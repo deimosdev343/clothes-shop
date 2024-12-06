@@ -7,14 +7,16 @@ import CartIcon from '../assets/shopping-cart.png';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import CartModal from './CartModal';
-import { clearProucts, useAppDispatch, useAppSelector } from '@/lib/store';
+import { addProduct, clearProucts, useAppDispatch, useAppSelector } from '@/lib/store';
 
 
 
 const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
   const cart = useAppSelector(state => state.cart);
+  const dispatch = useAppDispatch();
   const getCartAmount =  () => {
     let amount = 0;
     const keys = Object.keys(cart);

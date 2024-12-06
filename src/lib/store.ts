@@ -28,7 +28,7 @@ const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
   reducers: {
-    addAProduct: (state, action: PayloadAction<Product>) => {
+    addProduct: (state, action: PayloadAction<Product>) => {
       if(state[action.payload.id]) {
         state[action.payload.id].amount += 1;
       }
@@ -68,7 +68,7 @@ export const makeStore = () => {
 }
 
 
-export const {clearProucts} = cartSlice.actions;
+export const {clearProucts, addProduct, removeProduct} = cartSlice.actions;
 
 export type AppStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<AppStore['getState']>
