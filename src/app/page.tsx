@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Featured Products</h1>
         <ProductList/>
       </div>
-      <div className="mt-24">
+      <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl font-bold mb-12">Categories</h1>
         <CategoryList/>
       </div>
