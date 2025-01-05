@@ -1,7 +1,23 @@
+"use client";
+
+import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
 
 const CategoryList = () => {
+  const fetchData = async () => {
+    try {
+      const res = await axios.get('/api/categories');
+      console.log(res)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="px-4 overflow-x-scroll scrollbar-hide">
       <div className="flex gap-4 md:gap-8">

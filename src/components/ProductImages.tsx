@@ -23,8 +23,6 @@ const images = [
 
 const ProductImages = () => {
   const [index, setIndex] = useState(0);
-  
-
   return (
 
     <div className="">
