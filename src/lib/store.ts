@@ -14,14 +14,7 @@ export interface cartState {
 
 
 const initialCartState : cartState = {
-  "123":{
-    id:"123",
-    title:"test",
-    image:"https://i.imgur.com/GRz3dtd.png",
-    amount: 10,
-    price: 50.9
-
-  }
+  
 }
 
 const cartSlice = createSlice({
