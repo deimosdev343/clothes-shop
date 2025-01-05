@@ -1,7 +1,11 @@
+"use client";
+
 import Image from 'next/image'
 import React from 'react'
 import {Product} from '../../types/ProductType';
+import { removeProduct, useAppDispatch } from '@/lib/store';
 const CartProduct = ({product}: {product: Product}) => {
+  const dispatch = useAppDispatch();
   return (
     <div className='flex gap-4'>
     <Image
@@ -23,7 +27,14 @@ const CartProduct = ({product}: {product: Product}) => {
       </div>
       <div className='flex justify-between  '>
         <span className='text-gray-500'>Qty {product.amount}</span>
-        <span className='text-blue-500  '>Remove</span>
+        <span 
+          className='text-blue-500 hover:text-blue-400 transition-all cursor-pointer'
+          onClick={() => {
+            dispatch(removeProduct(product.id))
+          }}
+        >
+          Remove
+        </span>
       </div>
     </div>
   </div>
