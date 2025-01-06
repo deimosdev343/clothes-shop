@@ -6,20 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-const CategoryList = () => {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const fetchData = async () => {
-    try {
-      const res = await axios.get('/api/categories');
-      setCategories(res.data);
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+const CategoryList: React.FC<{categories: Category[]}> = ({categories}) => {
+  
 
   return (
     <div className="px-4 overflow-x-scroll scrollbar-hide">

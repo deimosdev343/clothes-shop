@@ -8,7 +8,6 @@ import axios from "axios";
 
 export default async function  Home() {
   const categories = (await axios.get(`${process.env.BACKEND_API}/category`)).data;
-  console.log(categories);
   
   return <div className="">
       <Slider/>
@@ -18,7 +17,7 @@ export default async function  Home() {
       </div>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl font-bold mb-12">Categories</h1>
-        <CategoryList/>
+        <CategoryList categories={categories}/>
       </div>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl font-bold">New Products</h1>
