@@ -1,12 +1,30 @@
 "use client"
 
 import { useAppSelector } from "@/lib/store"
+import { Product } from "@/types/ProductType"
+import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const ProductList = () => {
-  const products = useAppSelector(state => state.cart);
-  console.log(products);
+
+  const fetchProducts = async () => {
+    try {
+      const res = await axios.get('/api/products', {params:{category:"test"}});
+      console.log(res);
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
       <Link href={'/test'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
