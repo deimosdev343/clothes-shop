@@ -13,6 +13,9 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     );
   } catch (err) {
     console.log(err);
-    return res.status(500).json({msg:"Internal Server Error"});
+    NextResponse.json(
+      {msg:"Internal Server Error"}, 
+      {status:200}
+    );
   }
 }
