@@ -12,7 +12,7 @@ const CategoryList: React.FC<{categories: Category[]}> = ({categories}) => {
   return (
     <div className="px-4 overflow-x-scroll scrollbar-hide">
       <div className="flex gap-4 md:gap-8">
-        {categories.length > 0 && categories.map(cat => (<Link href={`/list?cat=${cat.name}`} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6">
+        {categories.length > 0 && categories.map(cat => (<Link href={`/list?cat=${cat.name}`} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6" key={cat.name}>
           <div className="relative bg-slate-100 w-full h-96">
             <Image
               src={cat.image}
