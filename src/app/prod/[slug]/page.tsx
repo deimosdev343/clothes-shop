@@ -3,11 +3,13 @@ import ProductImages from "@/components/ProductImages";
 import Add from "@/components/Add";
 import React from "react";
 import { useSearchParams } from 'next/navigation'
+import axios from "axios";
 
-const SinglePage = ({ params}: {
+const SinglePage = async ({ params}: {
   params : {slug: string | undefined}
 }) => {
-  console.log(params)
+  const res = await axios.get(`${process.env.BACKEND_API}/products//getProductById?id=${params.slug}`);
+  console.log(res);
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
       <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
