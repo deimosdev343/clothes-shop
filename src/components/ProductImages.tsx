@@ -21,14 +21,14 @@ const images = [
   }
 ]
 
-const ProductImages = () => {
+const ProductImages = ({pictures}: {pictures: Array<string>})  => {
   const [index, setIndex] = useState(0);
   return (
 
     <div className="">
       <div className="h-[500px] relative">
         <Image
-          src={images[index].url}
+          src={pictures[index]}
           alt=""
           fill
           sizes="100%"
@@ -36,9 +36,9 @@ const ProductImages = () => {
         />
       </div>
       <div className="flex flex-row  gap-4">
-        {images.map((prodImg, ind) => <div className="w-1/4 h-32 relative gap-4 mt-8" key={prodImg.id}>
+        {pictures.map((prodImg, ind) => <div className="w-1/4 h-32 relative gap-4 mt-8" key={prodImg}>
           <Image
-            src={prodImg.url}
+            src={prodImg}
             alt=""
             fill
             sizes="60%"

@@ -8,12 +8,12 @@ import axios from "axios";
 const SinglePage = async ({ params}: {
   params : {slug: string | undefined}
 }) => {
-  const res = await axios.get(`${process.env.BACKEND_API}/products//getProductById?id=${params.slug}`);
+  const res = (await axios.get(`${process.env.BACKEND_API}/products//getProductById?id=${params.slug}`)).data;
   console.log(res);
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
       <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
-        <ProductImages/>
+        <ProductImages pictures={[res.image, ...res.extraImages]}/>
       </div>
       <div className="w-full lg:w-1/2 flex flex-col gap-6">
         <h1 className="text-4xl font-medium">Product Name</h1>
