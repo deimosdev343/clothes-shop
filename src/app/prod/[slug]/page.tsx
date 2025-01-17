@@ -26,8 +26,6 @@ const SinglePage = async ({ params}: {
         </div>
         <div className="h-[2px] bg-gray-100"></div>
         <CustomizeProducts sizes={res.sizes} colors={res.colors}/>
-        <div className="h-[2px] bg-gray-100"></div>
-        <Add/>
       </div>
     </div>
   );
