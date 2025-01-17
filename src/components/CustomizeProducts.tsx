@@ -1,4 +1,8 @@
-export const CustomizeProducts = () => {
+"use client";
+
+
+export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, sizes: Array<string>}) => {
+  console.log(colors);
   return (
     <div className="flex flex-col gap-6">
       <h4 className="font-medium">Choose a color</h4>
