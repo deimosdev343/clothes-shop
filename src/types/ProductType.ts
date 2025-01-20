@@ -3,7 +3,9 @@ export interface Product {
   image: string,
   title: string,
   price: number,
-  amount: number,
+  colors: Array<string>,
+  sizes: Array<string>
+
 }
 
 
