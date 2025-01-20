@@ -24,7 +24,6 @@ export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, size
       <div className="flex flex-col gap-6">
         <h4 className="font-medium">Choose a color</h4>
         <ul className="flex items-center gap-5">
-          {/*This is how we are going to do the color select, not too bad*/}
           {colors.map((clr, i) => <li
             className={`w-8 h-8 rounded-full ring-2 ${i !== index.colorIndex ? "ring-gray-300" : "ring-blue-800"} 
               cursor-pointer relative`}
@@ -56,7 +55,6 @@ export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, size
                 {s}
               </li> 
           )}
-        
         </ul>
       </div>
       <div className="h-[2px] bg-gray-100"></div>
