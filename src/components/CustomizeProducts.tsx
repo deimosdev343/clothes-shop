@@ -1,9 +1,10 @@
 "use client";
 
+import { Product } from "@/types/ProductType";
 import { useState } from "react";
 
 
-export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, sizes: Array<string>}) => {
+export const CustomizeProducts = ({product} : {product: Product}) => {
   const [index, setIndex] = useState({
     colorIndex:0,
     sizeIndex:0
@@ -24,7 +25,7 @@ export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, size
       <div className="flex flex-col gap-6">
         <h4 className="font-medium">Choose a color</h4>
         <ul className="flex items-center gap-5">
-          {colors.map((clr, i) => <li
+          {product.colors.map((clr, i) => <li
             className={`w-8 h-8 rounded-full ring-2 ${i !== index.colorIndex ? "ring-gray-300" : "ring-blue-800"} 
               cursor-pointer relative`}
             style={{
@@ -42,7 +43,7 @@ export const CustomizeProducts = ({colors, sizes} : {colors: Array<string>, size
         <h4 className="font-medium">Choose a size</h4>
         <ul className="flex items-center gap-3">
           {
-            sizes.map((s, i) =>
+            product.sizes.map((s, i) =>
               <li 
                 onClick={() => {
                   setIndex(ind => ({...ind, sizeIndex: i}))

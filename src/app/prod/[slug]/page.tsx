@@ -25,7 +25,7 @@ const SinglePage = async ({ params}: {
           <h2 className="font-medium text-2xl">${res.price}</h2>
         </div>
         <div className="h-[2px] bg-gray-100"></div>
-        <CustomizeProducts sizes={res.sizes} colors={res.colors}/>
+        <CustomizeProducts product={res}/>
       </div>
     </div>
   );
