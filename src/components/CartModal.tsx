@@ -8,14 +8,12 @@ import CartProduct from './Product/CartProduct';
 const CartModal = () => {
 
   const cart = useAppSelector(state => state.cart);
-  console.log(cart);
   //obviously there's going to be actual functionality
   const cartItems = Object.keys(cart).length > 0;
   const getCartTotalPrice = ()  => {
     let price = 0;
-    const keys = Object.keys(cart);
-    keys.forEach((key) => {
-      price += cart[key].amount * cart[key].price;
+    cart.forEach((prod) => {
+      price += prod.amount * prod.price;
     })
     return price;
   }
@@ -30,7 +28,7 @@ const CartModal = () => {
       ) : (
         <>
         <div className='flex flex-col gap-8'>
-         {Object.keys(cart).map(key => <CartProduct product={cart[key]} key={key}/>)}
+         {(cart).map((prod, index) => <CartProduct product={prod} key={index}/>)}
         </div>
         <div className=''>
           <div className='flex items-center justify-between font-semibold'>

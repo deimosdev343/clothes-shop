@@ -2,54 +2,27 @@ import { CartProduct } from "@/types/ProductType";
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
 
-export interface cartState {
-  [Key: string] : CartProduct
-}
 
 
-const initialCartState : cartState = {
-  
-}
+
+const initialCartState : Array<CartProduct> = [
+
+]
 
 const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
   reducers: {
     addProduct: (state, action: PayloadAction<CartProduct>) => {
-      if(state[action.payload.id]) {
-        state[action.payload.id].amount += 1;
-      }
-      if(!state[action.payload.id]) {
-        state[action.payload.id] = {
-          id: action.payload.id,
-          title: action.payload.title,
-          image: action.payload.image,
-          amount: 1,
-          price: action.payload.price,
-          color: action.payload.color,
-          size: action.payload.size
-        }
-      }
+      state.push(action.payload);
       return state;
     },
-    removeProduct: (state, action: PayloadAction<string>) => {
-      if(state[action.payload]) {
-        delete state[action.payload];
-      }
-      return state;
-    },
-    decreaseProduct: (state, action: PayloadAction<string>) => {
-      if(state[action.payload].amount > 1) {
-        state[action.payload].amount -=1;
-      }
-      if(state[action.payload].amount == 1) {
-        delete state[action.payload];
-      }
+    removeProduct: (state, action: PayloadAction<number>) => {
+      state.splice(action.payload, 1);
       return state;
     },
     clearProducts: (state) => {
-      
-      state = {};
+      state = [];
       return state;
     }
   },
@@ -63,7 +36,7 @@ export const makeStore = () => {
 }
 
 
-export const {clearProducts, addProduct, removeProduct, decreaseProduct} = cartSlice.actions;
+export const {clearProducts, addProduct, removeProduct} = cartSlice.actions;
 
 export type AppStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<AppStore['getState']>
