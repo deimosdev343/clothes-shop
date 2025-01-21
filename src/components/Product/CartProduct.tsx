@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import React from 'react'
-import {Product} from '../../types/ProductType';
+import {CartProduct as CartProductType, Product} from '../../types/ProductType';
 import { removeProduct, useAppDispatch } from '@/lib/store';
-const CartProduct = ({product}: {product: Product}) => {
+const CartProduct = ({product}: {product: CartProductType}) => {
   const dispatch = useAppDispatch();
   return (
     <div className='flex gap-4'>

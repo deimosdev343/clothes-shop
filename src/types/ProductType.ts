@@ -8,4 +8,14 @@ export interface Product {
 
 }
 
+export interface CartProduct {
+  id: string,
+  image: string,
+  title: string,
+  price: number,
+  color: string,
+  size: string,
+  amount: number
+}
+
 
