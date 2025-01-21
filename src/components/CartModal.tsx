@@ -28,7 +28,7 @@ const CartModal = () => {
       ) : (
         <>
         <div className='flex flex-col gap-8'>
-         {(cart).map((prod, index) => <CartProduct product={prod} key={index}/>)}
+         {(cart).map((prod, index) => <CartProduct product={prod} index={index}  key={index}/>)}
         </div>
         <div className=''>
           <div className='flex items-center justify-between font-semibold'>

@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import React from 'react'
-import {CartProduct as CartProductType, Product} from '../../types/ProductType';
+import {CartProduct as CartProductType} from '../../types/ProductType';
 import { removeProduct, useAppDispatch } from '@/lib/store';
-const CartProduct = ({product}: {product: CartProductType}) => {
+const CartProduct = ({product, index}: {product: CartProductType, index: number}) => {
   const dispatch = useAppDispatch();
   return (
     <div className='flex gap-4'>
@@ -30,7 +30,7 @@ const CartProduct = ({product}: {product: CartProductType}) => {
         <span 
           className='text-blue-500 hover:text-blue-400 transition-all cursor-pointer'
           onClick={() => {
-            // dispatch(removeProduct(product.id))
+            dispatch(removeProduct(index))
           }}
         >
           Remove
