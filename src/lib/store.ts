@@ -1,15 +1,9 @@
-import { Product } from "@/types/ProductType";
+import { CartProduct } from "@/types/ProductType";
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
 
 export interface cartState {
-  [Key: string] : {
-    id: string,
-    title: string,
-    image: string,
-    amount: number,
-    price: number
-  }
+  [Key: string] : CartProduct
 }
 
 
@@ -21,7 +15,7 @@ const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
   reducers: {
-    addProduct: (state, action: PayloadAction<Product>) => {
+    addProduct: (state, action: PayloadAction<CartProduct>) => {
       if(state[action.payload.id]) {
         state[action.payload.id].amount += 1;
       }
@@ -31,7 +25,9 @@ const cartSlice = createSlice({
           title: action.payload.title,
           image: action.payload.image,
           amount: 1,
-          price: action.payload.price
+          price: action.payload.price,
+          color: action.payload.color,
+          size: action.payload.size
         }
       }
       return state;
