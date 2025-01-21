@@ -8,7 +8,7 @@ import axios from "axios";
 const SinglePage = async ({ params}: {
   params : {slug: string | undefined}
 }) => {
-  const res = (await axios.get(`${process.env.BACKEND_API}/products//getProductById?id=${params.slug}`)).data;
+  const res = (await axios.get(`${process.env.BACKEND_API}/products/getProductById?id=${params.slug}`)).data;
   
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">

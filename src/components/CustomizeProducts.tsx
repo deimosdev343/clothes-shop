@@ -1,5 +1,6 @@
 "use client";
 
+import { addProduct, useAppDispatch } from "@/lib/store";
 import { Product } from "@/types/ProductType";
 import { useState } from "react";
 
@@ -11,14 +12,14 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
   })
   
   const [quantity, setQuantity] = useState(1);
-  
+  const dispatch = useAppDispatch();
   const handleQuantity = (type: "i" | "d") => {
     if(type === "d" && quantity > 1) {
       return setQuantity((prev) => prev-1);
     }
     if(type === "i") {
       return setQuantity((prev) => prev+1); 
-    } 
+    }
   }
   return (
     <>
@@ -67,7 +68,20 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
             <div className=''>{quantity}</div>
             <button className='cursor-pointer text-xl' onClick={() => handleQuantity("i")}>+</button>
           </div>
-          <button className='w-36 text-sm rounded-3xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white'>
+          <button
+            onClick={() => {
+              dispatch(addProduct({
+                id: product.id,
+                image: product.image,
+                title: product.title,
+                price: product.price,
+                amount: quantity,
+                size: product.sizes[index.sizeIndex],
+                color: product.colors[index.colorIndex]
+              }))
+            }} 
+            className='w-36 text-sm rounded-3xl ring-1 ring-redPrim
+              text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white'>
             Add To Cart
           </button>
         </div>

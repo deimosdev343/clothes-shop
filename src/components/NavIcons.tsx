@@ -7,7 +7,7 @@ import CartIcon from '../assets/shopping-cart.png';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import CartModal from './CartModal';
-import { addProduct, clearProucts, useAppDispatch, useAppSelector } from '@/lib/store';
+import { addProduct, useAppDispatch, useAppSelector } from '@/lib/store';
 
 
 
@@ -19,9 +19,9 @@ const NavIcons = () => {
   const dispatch = useAppDispatch();
   const getCartAmount =  () => {
     let amount = 0;
-    const keys = Object.keys(cart);
-    keys.forEach((key) => {
-      amount += cart[key].amount;
+    
+    cart.forEach((prod) => {
+      amount += prod.amount;
     })
     return amount;
   } 
