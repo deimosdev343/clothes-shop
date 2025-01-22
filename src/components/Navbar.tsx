@@ -13,9 +13,9 @@ const Navbar = () => {
 
   const getCartAmount = ()  => {
     let amount = 0;
-    const keys = Object.keys(cart);
-    keys.forEach((key) => {
-      amount += cart[key].amount;
+    
+    cart.forEach((prd) => {
+      amount += prd.amount;
     })
     return amount;
   }
@@ -38,7 +38,7 @@ const Navbar = () => {
               className='w-[15%] h-[15%]'
             />        
           </Link>
-          <div className='hidden xl:flex gap-4'>
+          <div className='hidden xl:flex gap-4 items-start w-[50%]'>
             {/*
               I'll find a solution for this mess later  
             */}
@@ -47,13 +47,13 @@ const Navbar = () => {
             <Link href="/">Deals</Link>
             <Link href="/">About</Link>
             <Link href="/">Contact</Link> */}
-            <Link href="/">Logout</Link>
+            
             {<Link href="/">
               <p>Cart({currAmount})</p>
             </Link>}
           </div>
         </div>
-        <div className='w-2/3 xl:1/2 flex items-center justify-between gap-8 '>
+        <div className='w-full flex items-center justify-between gap-8 '>
           <Searchbar/>
           <NavIcons/>
         </div>
