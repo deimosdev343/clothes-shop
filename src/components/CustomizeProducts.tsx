@@ -6,6 +6,7 @@ import { useState } from "react";
 
 
 export const CustomizeProducts = ({product} : {product: Product}) => {
+  console.log(product)
   const [index, setIndex] = useState({
     colorIndex:0,
     sizeIndex:0
@@ -73,7 +74,7 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
               dispatch(addProduct({
                 id: product.id,
                 image: product.image,
-                title: product.title,
+                title: product.name,
                 price: product.price,
                 amount: quantity,
                 size: product.sizes[index.sizeIndex],
