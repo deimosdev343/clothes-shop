@@ -3,7 +3,12 @@ import ProductList from "@/components/ProductList";
 import Image from "next/image";
 import React from "react";
 
-const ListPage = () => {
+const ListPage = ({ params, searchParams}: {
+  params : {slug: string | undefined},
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+
+}) => {
+    console.log(searchParams)
     return (
       <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
         <div className="bg-pink-50 px-4 flex justify-between h-64">
