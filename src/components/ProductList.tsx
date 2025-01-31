@@ -15,11 +15,11 @@ interface Product {
   description: string,
   category: string
 }
-const ProductList = () => {
+const ProductList = ({params} : {params: {category: string | undefined}}) => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`/api/products`);
+      const res = await axios.get(`/api/products`, {params});
       if(Array.isArray(res.data)){
         setProducts(res.data.slice(0, 4));
       }
@@ -37,7 +37,7 @@ const ProductList = () => {
 
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-      {products.map(prod =>  <Link href={`/prod/${prod._id}`} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] ">
+      {products.map(prod =>  <Link href={`/prod/${prod._id}`} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%] " key={prod._id}>
         <div className="w-full relative h-80">
           <Image
             src={prod.image}
