@@ -24,6 +24,10 @@ const Filter = ({setParams} : {setParams: Function}) => {
           type="text"
           name="name"
           placeholder="Name"
+          onChange={(e) => {
+            const value = (e.target as HTMLInputElement).value;
+            setParams((prms: params) => ({...prms, name:value}))
+          }}
           className="text-xs rounded-2xl pl-2 ring-1 ring-gray-400"
         />
         

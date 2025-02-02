@@ -13,7 +13,8 @@ export const GET = async (req:  NextRequest) => {
         {
           params:{
             category,
-            sortBy
+            sortBy,
+            name
           }
         }
       );
