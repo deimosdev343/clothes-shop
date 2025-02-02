@@ -50,7 +50,7 @@ const ProductList = ({params} : {params: {category: string | undefined}}) => {
         </div>
         <div className="flex justify-between">
           <span className="font-medium text-md">{prod.name}</span>
-          <span className="font-semibold text-md">$49</span>
+          <span className="font-semibold text-md">{prod.price}$</span>
         </div>
         <div className="text-sm text-gray-500">{prod.description}</div>
         <button className="rounded-2xl ring-1 ring-redPrim text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white w-max">Add To Cart</button>
