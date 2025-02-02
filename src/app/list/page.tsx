@@ -13,7 +13,6 @@ const ListPage = ({}) => {
     name: "",
     sortBy: ""
   });
-  console.log(searchPrms);
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       <div className="bg-pink-50 px-4 flex justify-between h-64">
@@ -26,7 +25,7 @@ const ListPage = ({}) => {
           <Image src="/woman.png" alt="" fill className="object-contain"/>
         </div>
       </div>
-      <Filter/>
+      <Filter setParams={setParams}/>
       <h1>PROMOTION INPUT</h1>
       <ProductList params={params}/>
     </div>

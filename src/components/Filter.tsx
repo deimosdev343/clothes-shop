@@ -1,5 +1,10 @@
+type params = {
+  category:  string,
+  name: string,
+  sortBy: string
+}
 
-const Filter = () => {
+const Filter = ({setParams} : {setParams: Function}) => {
   return (
     <div className="mt-12 flex justify-between">
       <div className="flex gap-6 flex-wrap">
@@ -28,6 +33,10 @@ const Filter = () => {
           name="sort"
           id=""
           className="py-2 px-4 rounded-2xl text-xs font-medium bg-white ring-1 ring-gray-400"
+          onClick={(e) => {
+            const value = (e.target as HTMLInputElement).value
+            setParams((prms: params) => ({...prms, sortBy:value}))
+          }}
         >
           <option>Sort By</option>
           <option value="asc price">Price (low to high)</option>

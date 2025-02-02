@@ -5,11 +5,15 @@ export const GET = async (req:  NextRequest) => {
     
     try {
       const category = req.nextUrl.searchParams.get("category");
+      const sortBy = req.nextUrl.searchParams.get("sortBy");
+      const name = req.nextUrl.searchParams.get("name");
+      console.log(sortBy);
       const res = await axios.get(
         `${process.env.BACKEND_API}/products`,
         {
           params:{
-            category
+            category,
+            sortBy
           }
         }
       );

@@ -18,6 +18,7 @@ interface Product {
 const ProductList = ({params} : {params: {category: string | undefined}}) => {
 
   const fetchProducts = async () => {
+    console.log("test")
     try {
       const res = await axios.get(`/api/products`, {params});
       if(Array.isArray(res.data)){
@@ -33,7 +34,7 @@ const ProductList = ({params} : {params: {category: string | undefined}}) => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [params]);
 
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
