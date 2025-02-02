@@ -39,10 +39,10 @@ const Filter = ({setParams} : {setParams: Function}) => {
           }}
         >
           <option>Sort By</option>
-          <option value="asc price">Price (low to high)</option>
-          <option value="desc price">Price (high to low)</option>
-          <option value="asc lastUpdated">Newest</option>
-          <option value="desc lastUpdated">Oldest</option>
+          <option value="priceAsc">Price (low to high)</option>
+          <option value="priceDesc">Price (high to low)</option>
+          <option value="createdAtDesc">Newest</option>
+          <option value="createdAtAsc">Oldest</option>
         </select>
       </div>
     </div>
