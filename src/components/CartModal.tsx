@@ -4,6 +4,7 @@ import { useAppSelector } from '@/lib/store';
 import Image from 'next/image';
 import React  from 'react'
 import CartProduct from './Product/CartProduct';
+import Link from 'next/link';
 
 const CartModal = () => {
 
@@ -40,7 +41,11 @@ const CartModal = () => {
           </p>
           <div className='flex justify-between text-sm mt-2'>
             <button className='rounded-md py-3 px-4 ring-1 ring-gray-300'>View Cart</button>
-            <button className='rounded-md py-3 px-4 bg-black text-white'>Checkout</button>
+            <Link href={`/checkout`}>
+              <button className='rounded-md py-3 px-4 bg-black text-white'>
+                Checkout
+              </button>
+            </Link>
           </div> 
         </div>
         </>
