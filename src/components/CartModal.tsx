@@ -6,7 +6,7 @@ import React  from 'react'
 import CartProduct from './Product/CartProduct';
 import Link from 'next/link';
 
-const CartModal = () => {
+const CartModal = ({setCartOpen} :{setCartOpen: Function}) => {
 
   const cart = useAppSelector(state => state.cart);
   //obviously there's going to be actual functionality
@@ -42,7 +42,7 @@ const CartModal = () => {
           <div className='flex justify-between text-sm mt-2'>
             <button className='rounded-md py-3 px-4 ring-1 ring-gray-300'>View Cart</button>
             <Link href={`/checkout`}>
-              <button className='rounded-md py-3 px-4 bg-black text-white'>
+              <button className='rounded-md py-3 px-4 bg-black text-white' onClick={() => setCartOpen(false)}>
                 Checkout
               </button>
             </Link>

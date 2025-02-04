@@ -54,7 +54,7 @@ const NavIcons = () => {
         {getCartAmount()}
       </div>
       {isCartOpen && (
-        <CartModal />
+        <CartModal  setCartOpen={setIsCartOpen}/>
       )}
     </div>
   
