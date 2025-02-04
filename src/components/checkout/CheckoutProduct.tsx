@@ -37,8 +37,8 @@ const CheckoutCartProduct = ({product, index}: {product: CartProductType, index:
       <div className='flex justify-between '>
         <span className='text-gray-500 font-bold md:text-xl'>Qty {product.amount}</span>
         <div 
-          className='p-2 ring-2 border-blue-500 hover-border-blue-400 
-            rounded-xl text-blue-500 hover:text-blue-400 transition-all cursor-pointer'
+          className='p-2 ring-2 border-blue-500 hover:bg-blue-400 
+            rounded-xl text-blue-500 hover:text-white transition-all cursor-pointer'
           onClick={() => {
             dispatch(removeProduct(index))
           }}
