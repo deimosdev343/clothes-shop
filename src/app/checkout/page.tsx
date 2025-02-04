@@ -5,7 +5,7 @@ const CheckoutPage = () => {
   return (
     <div className="flex flex-col w-full h-screen">
       <div className="w-full md:w-[65%] min-h-full flex flex-col items-center">
-        <h2 className="font-bold text-4xl mb-2">Item List</h2>
+        <h2 className="font-bold text-4xl mb-2">Items For Checkout</h2>
         <CheckoutComponent/>
       </div>
     </div>
