@@ -8,7 +8,7 @@ const CheckoutCartProduct = ({product, index}: {product: CartProductType, index:
   const dispatch = useAppDispatch();
   console.log(product);
   return (
-    <div className='flex w-full p-5 gap-4 shadow-md bg-white rounded-xl'>
+    <div className='flex w-full p-5 gap-4 shadow-lg bg-white rounded-xl border-2 border-gray-100'>
     <Image
       src={`${product.image}`}
       alt=''
