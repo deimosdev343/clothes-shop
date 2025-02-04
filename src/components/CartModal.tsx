@@ -22,13 +22,13 @@ const CartModal = () => {
   return (
     <div
       className='w-max absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-      bg-white top-12 right-0 flex flex-col gap-6 z-20  '
+      bg-white top-12 right-0 flex flex-col gap-6 z-20  overflow-scroll'
     >
       {!cartItems ? (
         <h2 className='text-xl'>Cart Is Empty </h2>
       ) : (
         <>
-        <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-8 max-h-[45vh] overflow-scroll'>
          {(cart).map((prod, index) => <CartProduct product={prod} index={index}  key={index}/>)}
         </div>
         <div className=''>
