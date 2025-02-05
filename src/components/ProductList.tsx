@@ -15,7 +15,7 @@ interface Product {
   description: string,
   category: string
 }
-const ProductList = ({params} : {params: {category: string | undefined}}) => {
+const ProductList = ({params} : {params?: {category: string | undefined}}) => {
 
   const fetchProducts = async () => {
     console.log("test")
