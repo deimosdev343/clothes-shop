@@ -4,10 +4,15 @@ import Add from "@/components/Add";
 import React from "react";
 import { useSearchParams } from 'next/navigation'
 import axios from "axios";
+import { getServerSession } from "next-auth";
+import { NextRequest } from "next/server";
+import { Product } from "@/types/ProductType";
 
 const SinglePage = async ({ params}: {
-  params : {slug: string | undefined}
+  params : {slug: string | undefined},
+  
 }) => {
+
   const res = (await axios.get(`${process.env.BACKEND_API}/products/getProductById?id=${params.slug}`)).data;
   
   return (
