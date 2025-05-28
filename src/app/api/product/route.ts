@@ -5,13 +5,13 @@ export const GET = async (req: NextRequest) => {
     
     try {
       const id = req.nextUrl.searchParams.get("id");
-      const ip = req.ip;
-      console.log(ip);  
+      const ip = req.headers.get("x-forwarded-for");
       const res = await axios.get(
         `${process.env.BACKEND_API}/products/getProductById`,
         {
           params:{
-            id            
+            id,
+            viewerIp: ip
           }
         }
       );
