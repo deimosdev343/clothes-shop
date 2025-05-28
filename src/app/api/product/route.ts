@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async (req:  NextRequest) => {
+export const GET = async (req: NextRequest) => {
     
     try {
       const id = req.nextUrl.searchParams.get("id");

@@ -3,8 +3,11 @@ export interface Product {
   image: string,
   name: string,
   price: number,
+  description: string,
   colors: Array<string>,
-  sizes: Array<string>
+  sizes: Array<string>,
+  extraImages: Array<string>,
+  prevPrice?: number
 
 }
 
