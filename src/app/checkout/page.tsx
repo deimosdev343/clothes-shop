@@ -9,7 +9,7 @@ const CheckoutPage = () => {
         <h2 className="font-bold text-4xl mb-2">Items For Checkout</h2>
         <CheckoutComponent/>
       </div>
-      <div className="w-full md:w-[45%] min-h-full flex flex-col items-center">
+      <div className="w-full md:w-[45%] min-h-full flex flex-col items-center p-2">
         <h2 className="font-bold text-4xl mb-2">Total Bill</h2>
         <BillComponent/>
       </div>
