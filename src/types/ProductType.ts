@@ -14,7 +14,7 @@ export interface Product {
 export interface CartProduct {
   id: string,
   image: string,
-  title: string,
+  name: string,
   price: number,
   color: string,
   size: string,

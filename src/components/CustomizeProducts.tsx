@@ -74,7 +74,7 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
               dispatch(addProduct({
                 id: product.id,
                 image: product.image,
-                title: product.name,
+                name: product.name,
                 price: product.price,
                 amount: quantity,
                 size: product.sizes[index.sizeIndex],
