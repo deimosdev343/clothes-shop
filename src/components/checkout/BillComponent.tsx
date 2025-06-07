@@ -1,6 +1,7 @@
 "use client"
 
 import { useAppSelector } from "@/lib/store";
+import Link from "next/link";
 
 const BillComponent = () => {
   const cart = useAppSelector(state => state.cart);
@@ -21,9 +22,9 @@ const BillComponent = () => {
         <h2 className="font-bold text-2xl">Total Price After Discounts: {getCartTotalPrice().toFixed(2)}</h2>
       </div>
 
-      <button className="w-[80%] p-2 bg-green-500 hover:bg-green-400 transition-all rounded-lg text-2xl text-white font-bold">
+      <Link href={`/payment`} className="w-[80%] p-2 bg-green-500 hover:bg-green-400 transition-all rounded-lg text-2xl text-white font-bold">
         Continue To Payment
-      </button>
+      </Link>
     </div>
   )
 }
