@@ -71,8 +71,9 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
           </div>
           <button
             onClick={() => {
+              
               dispatch(addProduct({
-                id: product.id,
+                id: product._id,
                 image: product.image,
                 name: product.name,
                 price: product.price,
