@@ -1,12 +1,14 @@
 "use client"
 
-import { useAppSelector } from "@/lib/store";
+import { clearProducts, useAppDispatch, useAppSelector } from "@/lib/store";
 import CartProduct from "../Product/CartProduct";
 import CheckoutCartProduct from "./CheckoutProduct";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const CheckoutComponent = () => {
   const cart = useAppSelector(state => state.cart);
+  const dispatch = useAppDispatch()
   const router = useRouter();
   const cartItems = Object.keys(cart).length > 0;
   const getCartTotalPrice = ()  => {
@@ -19,7 +21,11 @@ const CheckoutComponent = () => {
 
   const sendPayment = async () => {
     try {
-      console.log(cart)
+      console.log("cart")
+      console.log(cart);
+      await axios.post(`/api/checkout`, {products: cart});
+      dispatch(clearProducts());
+      router.push('/')
     } catch (err) {
       console.log(err);
     }
@@ -27,8 +33,10 @@ const CheckoutComponent = () => {
 
   
   return (
-    <div className="flex flex-col gap-5 py-4 px-2 mb:px-8 w-[100%] md:w-[90%] h-[80%] min-h-[80%] bg-gray-100 shadow-lg justify-between  items-center rounded-xl overflow-scroll">
-      {(cart).map((prod, index) => <CheckoutCartProduct product={prod} index={index}  key={index}/>)}
+    <div className="flex flex-col gap-5 py-4 px-2 mb:px-8 w-[100%] md:w-[90%] h-[80%] min-h-[80%] bg-gray-100 shadow-lg justify-between  items-center rounded-xl">
+      <div className="flex flex-col items-center w-full h-[80%]  overflow-scroll gap-5">
+        {(cart).map((prod, index) => <CheckoutCartProduct product={prod} index={index}  key={index}/>)}
+      </div>
       <div className="flex flex-col items-center justify-center gap-2 bg-white w-full rounded-lg p-2 shadow-md">
         <h2 className="font-bold text-2xl">Total Price Before Discounts: {getCartTotalPrice().toFixed(2)}</h2>
         <h2 className="font-bold text-2xl">Total Price After Discounts: {getCartTotalPrice().toFixed(2)}</h2>

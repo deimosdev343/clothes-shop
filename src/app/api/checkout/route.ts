@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const POST = async (req: NextRequest, res: NextResponse) => {
   try {
     const {products} = await req.json();
+    console.log(products);
     const response = await axios.post(`${process.env.BACKEND_API}/order`, {products});
     return NextResponse.json(
       response.data,
