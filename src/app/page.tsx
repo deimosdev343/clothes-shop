@@ -4,6 +4,7 @@ import CategoryList from "@/components/CategoryList";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import axios from "axios";
+import FeaturedList from "@/components/featured/FeaturedList";
 
 
 export default async function  Home() {
@@ -13,7 +14,7 @@ export default async function  Home() {
       <Slider/>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl font-bold">Featured Products</h1>
-        <ProductList />
+        <FeaturedList />
       </div>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl font-bold mb-12">Categories</h1>

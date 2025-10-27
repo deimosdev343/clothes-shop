@@ -1,5 +1,7 @@
+"use client"
+
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface Product {
   _id: string,
@@ -15,14 +17,16 @@ const FeaturedList = () => {
   const fetchFeatured = async () => {
     try {
       const res = await axios.get(`/api/featured`);
-      
+      console.log(res);
     } catch (err) {
       console.log(err);
     }
   }
 
   const [featuredProds, setFeaturedProds] = useState<Product[]>([]);
-
+  useEffect(() => {
+    fetchFeatured();
+  }, [])
   return (
     <div>FeaturedList</div>
   )

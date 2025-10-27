@@ -8,7 +8,7 @@ export const GET =  async (req: NextRequest) => {
   try {
     const category = req.nextUrl.searchParams.get("category");
     const res = await axios.get(
-      `${process.env.BACKEND_API}/products`,
+      `${process.env.BACKEND_API}/products/featured`,
       {
         params:{
           category,
