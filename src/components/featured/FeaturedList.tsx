@@ -1,7 +1,10 @@
 "use client"
 
 import axios from 'axios'
+import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import ListProduct from '../Product/ListProduct'
 
 interface Product {
   _id: string,
@@ -17,7 +20,7 @@ const FeaturedList = () => {
   const fetchFeatured = async () => {
     try {
       const res = await axios.get(`/api/featured`);
-      console.log(res);
+      setFeaturedProds(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +31,16 @@ const FeaturedList = () => {
     fetchFeatured();
   }, [])
   return (
-    <div>FeaturedList</div>
+     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
+      {featuredProds.map(prod =>   <ListProduct
+        _id={prod._id}
+        image={prod.image}
+        name={prod.name}
+        price={prod.price}
+        description={prod.description}
+        category={prod.category}
+      />)}
+    </div>
   )
 }
 
