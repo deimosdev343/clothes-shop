@@ -1,6 +1,6 @@
 import ProductList from "@/components/ProductList";
 import Slider from "@/components/Slider";
-import CategoryList from "@/components/CategoryList";
+import CategoryList from "@/components/categories/CategoryList";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import axios from "axios";
