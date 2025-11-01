@@ -6,17 +6,20 @@ import React from 'react'
 const CategoryItem = ({category}:{category: Category}) => {
 
   return (
-    <Link href={`/list?cat=${category.name}`} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6" key={category.name}>
+    <Link href={`/list?cat=${category.name}`} className="border-2 p-2 rounded-xl shadow-xl flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6" key={category.name}>
       <div className="relative bg-slate-100 w-full h-96">
         <Image
           src={category.image}
           alt=""
           fill
           sizes="100%"
-        className="object-cover"
+        className="object-cover rounded-xl"
         />
       </div>
-      <h1 className="mt-8 font-bold text-cl tracking-wide">{category.name}</h1>
+      <div className='w-full flex items-center justify-center'>
+        <h1 className="mt-8 font-bold text-xl tracking-wide capitalize">{category.name}</h1>
+
+      </div>
     </Link>
   )
 }
