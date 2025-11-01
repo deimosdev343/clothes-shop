@@ -6,7 +6,7 @@ import React from 'react'
 const CategoryItem = ({category}:{category: Category}) => {
 
   return (
-    <Link href={`/list?cat=${category.name}`} className="border-2 p-2 rounded-xl shadow-xl flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6" key={category.name}>
+    <Link href={`/list?cat=${category.name}`} className="border-2 p-2 rounded-xl shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6" key={category.name}>
       <div className="relative bg-slate-100 w-full h-96">
         <Image
           src={category.image}
