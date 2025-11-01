@@ -26,7 +26,7 @@ const Navbar = () => {
         <Link href='/'>
           <div className='text-2xl font-extrabold'>Cloths Shop</div>
         </Link>
-        <Menu/>
+        <Menu cartAmount={currAmount}/>
       </div>
       <div className='hidden md:flex items-center justify-between gap-8 h-full'>
         <div className='w-1/3 xl:1/2 flex items-center'>
@@ -39,15 +39,6 @@ const Navbar = () => {
             />        
           </Link>
           <div className='hidden xl:flex gap-4 items-start w-[50%]'>
-            {/*
-              I'll find a solution for this mess later  
-            */}
-            {/* <Link href="/">Homepage</Link>
-            <Link href="/">Shop</Link>
-            <Link href="/">Deals</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link> */}
-            
             {<Link href="/">
               <p>Cart({currAmount})</p>
             </Link>}
