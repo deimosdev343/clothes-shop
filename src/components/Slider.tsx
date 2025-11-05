@@ -10,7 +10,7 @@ const slides = [
     description: "Sale! Up to 50% off!",
       img:"https://i.imgur.com/1uMluMJ.png",
     url:"/",
-    bg:"bg-gradiant-to-r from-yellow-50 to-pink-50"
+    bg:"bg-gradient-to-r from-yellow-50 to-pink-50"
   },
   {
     id:2, 
@@ -18,14 +18,14 @@ const slides = [
     description: "Sale! Up to 50% off!",
     img:"https://i.imgur.com/1uMluMJ.png",
     url:"/",
-    bg:"bg-gradiant-to-r from-pink-50 to-blue-50"
+    bg:"bg-gradient-to-r from-pink-50 to-blue-50"
   },
   {
     id:3,
     title:"Spring Sale Collection",
     img:"https://i.imgur.com/1uMluMJ.png",
     url:"/",
-    bg:"bg-gradiant-to-r from-blue-50 to-yellow-50"
+    bg:"bg-gradient-to-r  from-blue-50 to-yellow-50"
   }
 ];
 

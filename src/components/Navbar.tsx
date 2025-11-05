@@ -21,7 +21,7 @@ const Navbar = () => {
   }
   const currAmount = getCartAmount();
   return (
-    <div className='h-20 px-4 lg:px-16 xl:32 2xl:px-64 relative '>
+    <div className='h-20 px-4 lg:px-16 xl:32 2xl:px-64 relative  shadow-lg border-gray-200 '>
       <div className='flex items-center justify-between md:hidden'>
         <Link href='/'>
           <div className='text-2xl font-extrabold'>Cloths Shop</div>
@@ -38,14 +38,11 @@ const Navbar = () => {
               className='w-[15%] h-[15%]'
             />        
           </Link>
-          <div className='hidden xl:flex gap-4 items-start w-[50%]'>
-            {<Link href="/">
-              <p>Cart({currAmount})</p>
-            </Link>}
-          </div>
+          
         </div>
         <div className='w-full flex items-center justify-between gap-8 '>
-          <Searchbar/>
+          {/* <Searchbar/> */}
+          {/* Search bar at the top kinda makes no sense actually */}
           <NavIcons/>
         </div>
       </div>
