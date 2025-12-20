@@ -26,9 +26,17 @@ const FeaturedList = () => {
     }
   }
 
+
   const [featuredProds, setFeaturedProds] = useState<Product[]>([]);
   useEffect(() => {
-    fetchFeatured();
+    const inter = setInterval(() => {
+      fetchFeatured();
+
+    }, 1000);
+
+    return () => {
+      clearInterval(inter);
+    }
   }, [])
   return (
      <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
