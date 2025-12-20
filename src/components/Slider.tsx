@@ -41,7 +41,7 @@ const Slider = () => {
   useEffect(() => {
     const inter = setInterval(() => {
       setCurrent(current => {
-        if(current +1 >= slides.length) {
+        if(current +1 >= discounts.length) {
           return 0;
         }
        return current+1;
