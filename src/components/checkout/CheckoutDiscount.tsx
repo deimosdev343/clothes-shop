@@ -8,9 +8,9 @@ import React from 'react'
 const CheckoutDiscount = ({discount}:{discount: CaclculatedOrderType}) => {
   
   return (
-    <div className='flex items-center justify-between rounded-lg border-2 border-red-400 bg-red-50'>
-      <p>{discount.name}</p>
-      <p>{discount.price}</p>
+    <div className='p-5  w-[80%] flex items-center justify-between rounded-lg border-2 border-red-400 bg-red-50'>
+      <p className='font-bold'>{discount.name}</p>
+      <p className='font-bold'>({discount.price?.toFixed(2)})</p>
     </div>
   )
 }
