@@ -58,7 +58,7 @@ const CheckoutComponent = () => {
   
   useEffect(() => {
     getCalcuatedOrder();
-  }, [])
+  }, [cart.length])
 
   const [calcuatedOrder, setCalculatedOrder] = useState<Array<CaclculatedOrderType>>([]);
   let prodIndexCounter =0;
@@ -70,7 +70,8 @@ const CheckoutComponent = () => {
           if(order.type =="product") {
             const currIndex = prodIndexCounter;
             prodIndexCounter +=1;
-            return <CheckoutCartProduct product={cart[currIndex]} index={currIndex}/> 
+            const cartProduct = cart[currIndex];
+            if(cartProduct) return <CheckoutCartProduct product={cart[currIndex]} index={currIndex}/> 
           } else if(order.type == "discount") {
             return <CheckoutDiscount discount={order}/>
           }
