@@ -5,6 +5,8 @@ import CartProduct from "../Product/CartProduct";
 import CheckoutCartProduct from "./CheckoutProduct";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { CaclculatedOrderType } from "@/types/CalaculatedOrderType";
 
 const CheckoutComponent = () => {
   const cart = useAppSelector(state => state.cart);
@@ -32,8 +34,22 @@ const CheckoutComponent = () => {
   }
   console.log(cart)
 
-
   
+
+  const getCalcuatedOrder = async () => {
+    try {
+      const res = await axios.post(`/api/order/calculate`, {productList: cart});
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+  useEffect(() => {
+    getCalcuatedOrder();
+  }, [])
+
+  const [calcuatedOrder, setCalculatedOrder] = useState<Array<CaclculatedOrderType>>([]);
   return (
     <div className="flex flex-col gap-5 py-4 px-2 mb:px-8 w-[100%] md:w-[90%] h-[80%] min-h-[80%] bg-gray-100 shadow-lg justify-between  items-center rounded-xl">
       <div className="flex flex-col items-center w-full h-[80%]  overflow-scroll gap-5">

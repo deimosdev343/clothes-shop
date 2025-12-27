@@ -14,6 +14,7 @@ const cartSlice = createSlice({
   initialState: initialCartState,
   reducers: {
     addProduct: (state, action: PayloadAction<CartProduct>) => {
+      console.log(action.payload)
       state.push(action.payload);
       return state;
     },

@@ -75,7 +75,8 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
                 price: product.price,
                 amount: quantity,
                 size: product.sizes[index.sizeIndex],
-                color: product.colors[index.colorIndex]
+                color: product.colors[index.colorIndex],
+                discountId: product.discountId || null
               }))
             }} 
             className='w-36 text-sm rounded-3xl ring-1 ring-redPrim

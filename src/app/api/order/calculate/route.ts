@@ -9,7 +9,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
     const token = cks.get("token");
     const res = await axios.post(
       `${process.env.BACKEND_API}/order/calculateOrder`,
-      productList,
+      {products:productList},
       {
         headers:{
           Authorization: `bearer ${token}`

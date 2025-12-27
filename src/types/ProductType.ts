@@ -7,7 +7,7 @@ export interface Product {
   colors: Array<string>,
   sizes: Array<string>,
   extraImages: Array<string>,
-  prevPrice?: number
+  discountId?: string | null,
 
 }
 
@@ -18,7 +18,8 @@ export interface CartProduct {
   price: number,
   color: string,
   size: string,
-  amount: number
+  amount: number,
+  discountId?: string | null
 }
 
 
