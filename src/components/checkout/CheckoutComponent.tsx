@@ -30,6 +30,8 @@ const CheckoutComponent = () => {
       console.log(err);
     }
   }
+  console.log(cart)
+
 
   
   return (

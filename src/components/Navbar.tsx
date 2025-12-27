@@ -21,7 +21,7 @@ const Navbar = () => {
   }
   const currAmount = getCartAmount();
   return (
-    <div className='h-20 px-4 lg:px-16 xl:32 2xl:px-64 relative  shadow-lg border-gray-200 '>
+    <div className='h-20 px-4 lg:px-16 xl:32 2xl:px-64 relative  shadow-lg border-gray-200 mb-10'>
       <div className='flex items-center justify-between md:hidden'>
         <Link href='/'>
           <div className='text-2xl font-extrabold'>Cloths Shop</div>

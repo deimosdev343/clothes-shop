@@ -4,17 +4,15 @@ import { CustomizeProducts } from "@/components/CustomizeProducts";
 import ProductImages from "@/components/ProductImages";
 import Add from "@/components/Add";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from 'next/navigation'
+import { useParams, useSearchParams } from 'next/navigation'
 import axios from "axios";
 import { getServerSession } from "next-auth";
 import { NextRequest } from "next/server";
 import { Product } from "@/types/ProductType";
 
-const SinglePage =  ({ params}: {
-  params : {slug: string | undefined},
-  
-}) => {
+const SinglePage =  () => {
 
+  
   const fetchProductData = async () => {
     try {
       const resp = await axios.get(`/api/product`, {
@@ -31,7 +29,8 @@ const SinglePage =  ({ params}: {
   useEffect(() => {
     fetchProductData()
   }, []);
-
+  
+  const params = useParams();
   if(!prod) {
     return  <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
 
