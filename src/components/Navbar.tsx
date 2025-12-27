@@ -28,8 +28,8 @@ const Navbar = () => {
         </Link>
         <Menu cartAmount={currAmount}/>
       </div>
-      <div className='hidden md:flex items-center justify-between gap-8 h-full'>
-        <div className='w-1/3 xl:1/2 flex items-center'>
+      <div className='hidden md:flex items-center justify-between gap-8 h-full w-full'>
+        <div className='w-full flex items-center justify-end'>
           <Link href='/' className='relative flex items-center'>
             <div className='text-2xl font-extrabold'>Cloths Shop</div>
             <Image
@@ -40,7 +40,7 @@ const Navbar = () => {
           </Link>
           
         </div>
-        <div className='w-full flex items-center justify-between gap-8 '>
+        <div className='w-full flex items-center justify-end gap-8 '>
           {/* <Searchbar/> */}
           {/* Search bar at the top kinda makes no sense actually */}
           <NavIcons/>

@@ -41,6 +41,7 @@ const FeaturedList = () => {
   return (
      <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
       {featuredProds.map(prod => <ListProduct
+        key={prod._id}
         _id={prod._id}
         image={prod.image}
         name={prod.name}
