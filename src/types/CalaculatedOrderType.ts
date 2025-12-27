@@ -1,5 +1,5 @@
 export interface CaclculatedOrderType {
-  type: "product" | "order",
+  type: "product" | "discount",
   price: number | undefined,
   name: string
 }

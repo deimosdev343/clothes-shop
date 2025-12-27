@@ -16,6 +16,7 @@ const CheckoutCartProduct = ({product, index}: {product: CartProductType, index:
       width={0}
       height={0}
       sizes='100vw'
+
       className='object-cover rounded-md w-16 h-16'
     />
     <div className='flex flex-col justify-between w-full'>

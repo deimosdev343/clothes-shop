@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { CaclculatedOrderType } from "@/types/CalaculatedOrderType";
+import CheckoutDiscount from "./CheckoutDiscount";
 
 const CheckoutComponent = () => {
   const cart = useAppSelector(state => state.cart);
@@ -39,7 +40,7 @@ const CheckoutComponent = () => {
   const getCalcuatedOrder = async () => {
     try {
       const res = await axios.post(`/api/order/calculate`, {productList: cart});
-      console.log(res);
+      setCalculatedOrder(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -50,10 +51,20 @@ const CheckoutComponent = () => {
   }, [])
 
   const [calcuatedOrder, setCalculatedOrder] = useState<Array<CaclculatedOrderType>>([]);
+  let prodIndexCounter =0;
+
   return (
     <div className="flex flex-col gap-5 py-4 px-2 mb:px-8 w-[100%] md:w-[90%] h-[80%] min-h-[80%] bg-gray-100 shadow-lg justify-between  items-center rounded-xl">
       <div className="flex flex-col items-center w-full h-[80%]  overflow-scroll gap-5">
-        {(cart).map((prod, index) => <CheckoutCartProduct product={prod} index={index}  key={index}/>)}
+        {(calcuatedOrder).map((order) => {
+          if(order.type =="product") {
+            const currIndex = prodIndexCounter;
+            prodIndexCounter +=1;
+            return <CheckoutCartProduct product={cart[currIndex]} index={currIndex}/> 
+          } else if(order.type == "discount") {
+            return <CheckoutDiscount discount={order}/>
+          }
+        })}
       </div>
       <div className="flex flex-col items-center justify-center gap-2 bg-white w-full rounded-lg p-2 shadow-md">
         <h2 className="font-bold text-2xl">Total Price Before Discounts: {getCartTotalPrice().toFixed(2)}</h2>

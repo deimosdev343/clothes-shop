@@ -49,7 +49,6 @@ const SinglePage =  () => {
               {prod.description}
             </p>
             <div className="flex items-center gap-4">
-              {prod.prevPrice && prod.prevPrice > prod.price && <h3 className="text-xl text-gray-500 line-through">${prod.price}</h3>}
               <h2 className="font-medium text-2xl">${prod.price}</h2>
             </div>
             <div className="h-[2px] bg-gray-100"></div>
