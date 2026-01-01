@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async (req:NextRequest, res: NextResponse) => {
+export const GET = async (req:NextRequest) => {
   try {
     const discountsRes = await axios.get(`${process.env.BACKEND_API}/discounts/getDiscountsForClient`);
     const discounts = discountsRes.data;

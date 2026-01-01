@@ -3,7 +3,7 @@ import '../../../../envConfig'
 import { NextResponse } from "next/server";
 import axios from "axios";
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async (req: NextApiRequest) => {
   try {
     const res = await axios.get(`${process.env.BACKEND_API}/category`);
     
