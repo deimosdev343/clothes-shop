@@ -4,7 +4,7 @@ import { CustomizeProducts } from "@/components/CustomizeProducts";
 import ProductImages from "@/components/ProductImages";
 import Add from "@/components/Add";
 import React, { useEffect, useState } from "react";
-import { useParams, useSearchParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import axios from "axios";
 import { getServerSession } from "next-auth";
 import { NextRequest } from "next/server";
