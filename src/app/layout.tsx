@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import StoreProvider from "./StoreProvider";
 import { Suspense } from "react";
+import AnmationWrapper from "@/components/Animation/AnmationWrapper";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,9 +33,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           <StoreProvider>
-            <Navbar/>
              <Suspense fallback={<div>Loading...</div>}>
-              {children}
+              <AnmationWrapper>
+                <Navbar/>
+                {children}
+              </AnmationWrapper>
              </Suspense>
           </StoreProvider>
           <Footer/>

@@ -1,6 +1,6 @@
 "use client";
 
-import { addProduct, useAppDispatch } from "@/lib/store";
+import { addProduct, setAnimation, stopAnimation, useAppDispatch } from "@/lib/store";
 import { Product } from "@/types/ProductType";
 import { useState } from "react";
 
@@ -67,6 +67,13 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
           
           <button
             onClick={() => {
+              dispatch(setAnimation({
+                animation:"addToCheckout",
+                itemImage: product.image
+              }));
+              setTimeout(() => {
+                dispatch(stopAnimation())
+              }, 3000);
               
               dispatch(addProduct({
                 id: product._id,

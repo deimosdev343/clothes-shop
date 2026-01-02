@@ -4,26 +4,31 @@ import { useAppSelector } from '@/lib/store'
 import React from 'react'
 import {motion} from 'framer-motion';
 import Image from 'next/image';
-
+import UpArrowIcon from '../../assets/arrowRedUp.png';
 const AnmationWrapper = ({children} :{children: React.ReactNode}) => {
   const anim = useAppSelector(state=> state.anim);
 
   return (
-    <>
+    <div className='w-full h-screen'>
       {anim.animation == "addToCheckout" && 
         <motion.div
-          initial={{opacity:0, x:"50%", y:"50%"}}
-          animate={{opacity:1, x:"0%", y:"0%"}}
-        >
+          
+          className="absolute top-[15%] left-[93.2%] w-64 "
+          initial={{  y: "-50%" }}
+          animate={{ y: "-100%" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        > 
           <Image
-            src={anim.itemImage}
+            src={UpArrowIcon}
             alt=''
-            className='w-20 h-20'
+            
+            width={50}
+            height={50}
           />
         </motion.div>
       }
       {children}
-    </>
+    </div>
   )
 }
 
