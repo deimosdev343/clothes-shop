@@ -9,6 +9,23 @@ const initialCartState : Array<CartProduct> = [
 
 ]
 
+const initialAnimState :{ animation: string} = {
+  animation: ""
+};
+
+const animationSlice = createSlice({
+  name: "Anim",
+  initialState: initialAnimState,
+  reducers: {
+    setAnimation: (state, action: PayloadAction<string>) => {
+      state.animation = action.payload;
+    },
+    stopAnimation: (state) => {
+      state.animation = "";
+    }
+  }
+});
+
 const cartSlice = createSlice({
   name: 'Cart',
   initialState: initialCartState,
@@ -38,6 +55,7 @@ export const makeStore = () => {
 
 
 export const {clearProducts, addProduct, removeProduct} = cartSlice.actions;
+export const {stopAnimation, setAnimation} = animationSlice.actions;
 
 export type AppStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<AppStore['getState']>
