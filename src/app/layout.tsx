@@ -34,10 +34,8 @@ export default function RootLayout({
       >
           <StoreProvider>
              <Suspense fallback={<div>Loading...</div>}>
-              <AnmationWrapper>
                 <Navbar/>
                 {children}
-              </AnmationWrapper>
              </Suspense>
           </StoreProvider>
           <Footer/>

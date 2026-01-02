@@ -10,7 +10,7 @@ import NavIcons from './NavIcons';
 import { useAppDispatch, useAppSelector } from '@/lib/store';
 const Navbar = () => {
   const cart = useAppSelector(state => state.cart);
-
+  
   const getCartAmount = ()  => {
     let amount = 0;
     
@@ -27,6 +27,7 @@ const Navbar = () => {
           <div className='text-2xl font-extrabold'>Cloths Shop</div>
         </Link>
         <Menu cartAmount={currAmount}/>
+        
       </div>
       <div className='hidden md:flex items-center justify-between gap-8 h-full w-full'>
         <div className='w-full flex items-center justify-end'>
