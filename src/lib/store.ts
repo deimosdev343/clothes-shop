@@ -9,16 +9,18 @@ const initialCartState : Array<CartProduct> = [
 
 ]
 
-const initialAnimState :{ animation: string} = {
-  animation: ""
+const initialAnimState :{ animation: string, itemImage: string} = {
+  animation: "",
+  itemImage: ""
 };
 
 const animationSlice = createSlice({
   name: "Anim",
   initialState: initialAnimState,
   reducers: {
-    setAnimation: (state, action: PayloadAction<string>) => {
-      state.animation = action.payload;
+    setAnimation: (state, action: PayloadAction<{animation: string, itemImage: string}>) => {
+      state.animation = action.payload.animation;
+      state.itemImage = action.payload.itemImage;
     },
     stopAnimation: (state) => {
       state.animation = "";
@@ -48,7 +50,8 @@ const cartSlice = createSlice({
 export const makeStore = () => {
   return configureStore({
     reducer:{
-      cart: cartSlice.reducer
+      cart: cartSlice.reducer,
+      anim: animationSlice.reducer
     }
   })
 }
