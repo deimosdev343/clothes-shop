@@ -11,6 +11,8 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
     colorIndex:0,
     sizeIndex:0
   })
+
+  const [addButtonDisabled, setAddButtonDisabled] = useState<boolean>(false);
   
   const anim = useAppSelector(state => state.anim);
   const [quantity, setQuantity] = useState(1);
@@ -67,13 +69,19 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
         <div className='flex items-center '>
           
           <button
+            disabled={addButtonDisabled}
             onClick={() => {
+              if(addButtonDisabled){
+                return;
+              }
               dispatch(setAnimation({
                 animation:"addToCheckout",
                 itemImage: product.image
               }));
+              setAddButtonDisabled(true);
               setTimeout(() => {
-                dispatch(stopAnimation())
+                dispatch(stopAnimation());
+                setAddButtonDisabled(false);
               }, 3000);
 
               dispatch(addProduct({
@@ -88,7 +96,7 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
               }))
             }} 
             className='w-36 text-sm rounded-3xl ring-1 ring-redPrim
-              text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white '>
+              text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white disabled:opacity-25'>
             Add To Cart
           </button>
           {anim.animation == "addToCheckout" && 

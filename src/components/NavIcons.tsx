@@ -65,8 +65,8 @@ const NavIcons = () => {
         <motion.div
           
           className="absolute top-[400%] left-[50%] w-64 "
-          initial={{  y: "-50%" }}
-          animate={{ y: "-100%" }}
+          initial={{opacity:1,  y: "-50%" }}
+          animate={{opacity:0, y: "-100%" }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         > 
           <Image
