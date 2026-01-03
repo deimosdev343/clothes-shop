@@ -32,7 +32,7 @@ const FeaturedList = () => {
     const inter = setInterval(() => {
       fetchFeatured();
 
-    }, 1000);
+    }, 10000);
 
     return () => {
       clearInterval(inter);
