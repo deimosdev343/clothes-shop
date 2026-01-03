@@ -41,12 +41,9 @@ const Slider = () => {
   useEffect(() => {
     const inter = setInterval(() => {
       setCurrent(current => {
-        if(current +1 >= discounts.length) {
-          return 0;
-        }
        return current+1;
       })
-    },3000)
+    },7000)
     return () => {
       clearInterval(inter);
     }
@@ -79,7 +76,7 @@ const Slider = () => {
     <div className='h-[calc(100vh-80px)] overflow-hidden'>
       <div 
         className='w-max h-full flex transition-all ease-in-out duration-1000'
-        style={{transform:`translateX(-${current *100}vw)`}}  
+        style={{transform:`translateX(-${(current % discounts.length) *100}vw)`}}  
       >
         {discounts.map(slide => <div className={`${slide.background} bg-gradient-to-r w-screen h-full flex flex-col gap-16 xl:flex-row`} key={slide._id}>
           
@@ -109,12 +106,12 @@ const Slider = () => {
             <div 
               key={slide._id}
               className={`w-3 h-3 rounded-full ring-1 ring-gray-600
-                cursor-pointer flex items-center justify-center ${current === index ? "scale-150" : ""}`}
+                cursor-pointer flex items-center justify-center ${current % discounts.length === index ? "scale-150" : ""}`}
               onClick={() => {
                 setCurrent(index);
               }}
             >
-              {current === index && 
+              {current % discounts.length === index && 
                 <div   className='w-[6px] h-[6px] bg-gray-600 rounded-full'>
                 </div>
               }
