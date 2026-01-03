@@ -1,9 +1,9 @@
 "use client";
 
-import { addProduct, setAnimation, stopAnimation, useAppDispatch } from "@/lib/store";
+import { addProduct, setAnimation, stopAnimation, useAppDispatch, useAppSelector } from "@/lib/store";
 import { Product } from "@/types/ProductType";
 import { useState } from "react";
-
+import {motion} from 'framer-motion'
 
 export const CustomizeProducts = ({product} : {product: Product}) => {
   console.log(product)
@@ -12,6 +12,7 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
     sizeIndex:0
   })
   
+  const anim = useAppSelector(state => state.anim);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useAppDispatch();
   const handleQuantity = (type: "i" | "d") => {
@@ -74,7 +75,7 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
               setTimeout(() => {
                 dispatch(stopAnimation())
               }, 3000);
-              
+
               dispatch(addProduct({
                 id: product._id,
                 image: product.image,
@@ -90,6 +91,17 @@ export const CustomizeProducts = ({product} : {product: Product}) => {
               text-redPrim py-2 px-4 hover:bg-redPrim hover:text-white '>
             Add To Cart
           </button>
+          {anim.animation == "addToCheckout" && 
+            <motion.div
+              
+              className="absolute"
+              initial={{opacity: 1, x: "100%" }}
+              animate={{opacity: 0, x: "200%" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            > 
+              <p className="text-3xl font-bold text-red-900">+1</p>
+            </motion.div>
+          }
         </div>
       </div>
     </>
