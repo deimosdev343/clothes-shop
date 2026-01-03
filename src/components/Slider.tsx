@@ -64,6 +64,7 @@ const Slider = () => {
   }
 
   useEffect(() => {
+    fetchDiscounts();
     const inter = setInterval(() => {
       fetchDiscounts();
     }, 10000)

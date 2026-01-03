@@ -29,6 +29,7 @@ const FeaturedList = () => {
 
   const [featuredProds, setFeaturedProds] = useState<Product[]>([]);
   useEffect(() => {
+    fetchFeatured();
     const inter = setInterval(() => {
       fetchFeatured();
 
