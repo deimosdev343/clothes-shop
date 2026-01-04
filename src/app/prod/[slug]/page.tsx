@@ -49,7 +49,7 @@ const SinglePage =  () => {
               {prod.description}
             </p>
             <div className="flex items-center gap-4">
-              <h2 className="font-medium text-2xl">${prod.price}</h2>
+              <h2 className="font-medium text-2xl">${Number(prod.price).toFixed(2)}</h2>
             </div>
             <div className="h-[2px] bg-gray-100"></div>
             <CustomizeProducts product={prod}/>

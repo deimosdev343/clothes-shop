@@ -26,7 +26,7 @@ const ListProduct = ({_id, image, name, price, description, category}: Props) =>
       <div className='flex flex-col p-2 border-t-4 border-gray-400'>
         <div className="flex justify-between">
           <span className="font-medium text-md">{name}</span>
-          <span className="font-semibold text-md">{price}$</span>
+          <span className="font-semibold text-md">{price.toFixed(2)}$</span>
         </div>
         <div className="text-sm text-gray-500">{description}</div>
       </div>

@@ -20,7 +20,7 @@ const CartProduct = ({product, index}: {product: CartProductType, index: number}
       <div className=''>
         <div className='flex items-center justify-between gap-8'>
           <h3 className='font-semibold text-xl'>{product.name}</h3>
-          <div className='p-1 bg-gray-50 rounded-sm'>${product.price}</div>
+          <div className='p-1 bg-gray-50 rounded-sm'>${product.price.toFixed(2)}</div>
         </div>
           <div className='w-full flex items-center justify-start py-2 gap-2'>
             <h2 className='font-bold'>Color:</h2>
